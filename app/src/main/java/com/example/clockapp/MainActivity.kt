@@ -1,7 +1,6 @@
 package com.example.clockapp
 
 import android.os.Bundle
-import android.widget.Space
 import android.widget.TextClock
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -19,7 +18,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
@@ -70,12 +69,14 @@ private fun SingleClock(
         style = MaterialTheme.typography.bodyMedium,
         text = timeZoneId.displayName,
     )
+    val clockTextColor = MaterialTheme.colorScheme.primary.toArgb()
     AndroidView(
         factory = { context ->
             TextClock(context).apply {
                 format12Hour?.let { this.format12Hour = "hh:mm:ss a" }
                 this.timeZone = timeZoneId.id
                 textSize.let { this.textSize = 30f }
+                setTextColor(clockTextColor)
             }
         },
         modifier = Modifier.padding(5.dp),
