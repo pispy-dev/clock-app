@@ -1,5 +1,6 @@
 package com.example.clockapp
 
+import android.content.res.Configuration.UI_MODE_NIGHT_YES
 import android.os.Bundle
 import android.widget.TextClock
 import androidx.activity.ComponentActivity
@@ -86,7 +87,18 @@ private fun SingleClock(
 @Preview(
     showSystemUi = true,
 )
+@Preview(
+    showSystemUi = true,
+    uiMode = UI_MODE_NIGHT_YES,
+)
 @Composable
 fun previewDisplayTxtClock() {
-    displayTxtClock()
+    ClockAppTheme {
+        Surface(
+            modifier = Modifier.fillMaxSize(),
+            color = MaterialTheme.colorScheme.background
+        ) {
+            displayTxtClock()
+        }
+    }
 }
