@@ -74,9 +74,10 @@ private fun SingleClock(
     AndroidView(
         factory = { context ->
             TextClock(context).apply {
-                format12Hour?.let { this.format12Hour = "hh:mm:ss a" }
+                this.format24Hour = "hh:mm:ss a"
+                this.format12Hour = "hh:mm:ss a"
                 this.timeZone = timeZoneId.id
-                textSize.let { this.textSize = 30f }
+                this.textSize = 30f
                 setTextColor(clockTextColor)
             }
         },
