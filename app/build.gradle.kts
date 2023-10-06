@@ -8,7 +8,7 @@ android {
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "com.example.clockapp"
+        applicationId = "pl.piospy.dev.clockapp"
         minSdk = 24
         targetSdk = 33
         versionCode = 1
