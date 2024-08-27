@@ -5,14 +5,14 @@ plugins {
 
 android {
     namespace = "com.example.clockapp"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "pl.piospy.dev.clockapp"
         minSdk = 24
-        targetSdk = 33
-        versionCode = 2
-        versionName = "1.1"
+        targetSdk = 34
+        versionCode = 10
+        versionName = "1.10"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
